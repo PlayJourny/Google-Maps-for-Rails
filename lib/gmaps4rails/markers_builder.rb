@@ -75,6 +75,10 @@ module Gmaps4rails
       def shadow(hash)
         @hash[:shadow] = hash
       end
+
+      def label(string)
+        @hash[:label] = string
+      end
     end
   end
 end
