@@ -20,7 +20,6 @@ class @Gmaps.Google.Builders.Marker extends Gmaps.Objects.BaseBuilder
   #     url
   #     width
   #     height
-  #   label
   # provider options:
   #   https://developers.google.com/maps/documentation/javascript/reference?hl=fr#MarkerOptions
   # internal_options
@@ -50,9 +49,6 @@ class @Gmaps.Google.Builders.Marker extends Gmaps.Objects.BaseBuilder
       position: new(@primitives().latLng)(coords[0], coords[1])
       icon:     @_get_picture('picture')
       shadow:   @_get_picture('shadow')
-    label_option =
-      label: @marker_options["label"]
-    base_options = _.extend base_options, label_option if @marker_options["label"]
     _.extend @provider_options, base_options
 
   create_infowindow_on_click: ->
