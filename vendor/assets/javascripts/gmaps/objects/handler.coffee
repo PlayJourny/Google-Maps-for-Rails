@@ -27,6 +27,7 @@ class @Gmaps.Objects.Handler
 
   # return marker object
   addMarker: (marker_data, provider_options)->
+    provider_options = {} if !provider_options?
     provider_options["label"] = marker_data["label"] if marker_data["label"]
     marker = @_builder('Marker').build(marker_data, provider_options, @marker_options)
     marker.setMap(@getMap())
